@@ -79,10 +79,10 @@ def main():
 	l2, l1 = applyFilter(image, kernel_type, kernel_x, kernel_y)
 	plt.imshow(l2, cmap='gray')
 	plt.axis('off')
-	plt.savefig('../output_data/q1.2_'+kernel_type+'_L2.jpg', bbox_inches='tight')
+	plt.savefig('../output_data/1.2_'+kernel_type+'_L2.jpg', bbox_inches='tight')
 	plt.imshow(l1, cmap='gray')
 	plt.axis('off')
-	plt.savefig('../output_data/q1.2_'+kernel_type+'_L1.jpg', bbox_inches='tight')
+	plt.savefig('../output_data/1.2_'+kernel_type+'_L1.jpg', bbox_inches='tight')
 	print(kernel_type + ' filter applied on Barbara.jpg') 
 
 	minVal = 70
@@ -90,7 +90,7 @@ def main():
 	image_canny = applyCanny(image_gray, minVal, maxVal)
 	plt.imshow(image_canny, cmap='gray')
 	plt.axis('off')
-	plt.savefig('../output_data/q1.2_canny.jpg', bbox_inches='tight')
+	plt.savefig('../output_data/canny.jpg', bbox_inches='tight')
 	print('Canny filter applied on Barabara.jpg')
 
 	row,col = image.shape
@@ -102,13 +102,13 @@ def main():
 	noisy = image + gauss
 	plt.imshow(noisy, cmap='gray')
 	plt.axis('off')
-	plt.savefig('../output_data/q1.3_noisy.png', bbox_inches='tight')
+	plt.savefig('../output_data/noisy.png', bbox_inches='tight')
 	print('Gaussian noise added to Barbara.jpg')
 
 	l2_noisy, l1_noisy = applyFilter(noisy, kernel_type, kernel_x, kernel_y)
 	plt.imshow(l2_noisy, cmap='gray')
 	plt.axis('off')
-	plt.savefig('../output_data/q1.3_noisyFiltered.jpg', bbox_inches='tight')
+	plt.savefig('../output_data/noisyFiltered.jpg', bbox_inches='tight')
 	print(kernel_type + ' filter applied on noisy Barbara.jpg') 
 
 
