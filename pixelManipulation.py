@@ -29,7 +29,7 @@ def mergeImage(fg, bg):
 	  
 	img = cv2.add(fg, bg) 
 	
-	cv2.imwrite('../output_data/q1_merged.jpg',img)  
+	cv2.imwrite('../output_data/merged.jpg',img)  
 	cv2.imshow('merged', img) 
 	cv2.waitKey(0) 
 	
