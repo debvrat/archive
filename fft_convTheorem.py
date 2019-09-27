@@ -32,7 +32,7 @@ img2 = cv2.imread('../input_data/bricks.jpg')
 img2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)
 
 convolved = convolve(img, img2)
-cv2.imwrite('q6_convolve.jpg', convolved)
+cv2.imwrite('convolve.jpg', convolved)
 print('convolution complete')
 
 img2pad = np.pad(img2, ((90,89),(50,49)), mode='constant')
@@ -40,9 +40,9 @@ img2pad = np.pad(img2, ((90,89),(50,49)), mode='constant')
 img_f = np.fft.fft2(img)
 img2pad_f = np.fft.fft2(img2pad)
 convolved_f = np.fft.fft2(convolved)
-cv2.imwrite('q6_convolve-fft-abs.jpg', abs(convolved_f))
+cv2.imwrite('convolve-fft-abs.jpg', abs(convolved_f))
 product = np.multiply(img_f, img2pad_f)
-cv2.imwrite('q6_product-abs.jpg', abs(product))
+cv2.imwrite('product-abs.jpg', abs(product))
 
 def calcConvTime(img1, img2): #grayscale image matrices
     start = time.time()
